@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dell'Ombra e del Velo | SS 2027</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --bg-dark: #070707;
+            --text-light: #f5f5f3;
+            --bg-light: #f5f5f3;
+            --text-dark: #121212;
+            --accent-gray: #888888;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-serif-custom {
+            font-family: 'Cinzel', serif;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(8px);
+            transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Stile Immagini aggiornato: meno B/N per valorizzare i file originali */
+        .editorial-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(105%) brightness(0.9);
+            transition: filter 0.8s ease, transform 1.5s ease;
+        }
+
+        .img-container {
+            overflow: hidden;
+            background-color: #1a1a1a;
+            position: relative;
+        }
+
+        /* Rivela i colori originali al passaggio del mouse */
+        .img-container:hover .editorial-img {
+            filter: grayscale(0%) contrast(110%) brightness(1);
+            transform: scale(1.03);
+        }
+
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-dark {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+        
+        .section-light {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gray-400 selection:text-black">
+
+    <!-- Navigazione -->
+    <nav class="fixed w-full z-50 top-0 py-6 px-6 md:px-12 flex justify-between items-center transition-all duration-500" id="navbar">
+        <div class="text-sm md:text-base tracking-widest font-serif-custom uppercase drop-shadow-md">Dante Odierna</div>
+        <div class="hidden md:flex gap-10 text-xs tracking-[0.15em] uppercase font-light">
+            <a href="#concept" class="nav-link opacity-70 hover:opacity-100 transition-opacity">Concept</a>
+            <a href="#target" class="nav-link opacity-70 hover:opacity-100 transition-opacity">Vision</a>
+            <a href="#lookbook" class="nav-link opacity-70 hover:opacity-100 transition-opacity">Lookbook</a>
+            <a href="#comunicazione" class="nav-link opacity-70 hover:opacity-100 transition-opacity">Comunicazione</a>
+        </div>
+        <button class="md:hidden text-current opacity-80">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-[100dvh] w-full flex flex-col justify-center items-center text-center relative px-6 section-dark overflow-hidden">
+        
+        <!-- Sfondo con copertina iniziale -->
+        <div class="absolute inset-0 z-0">
+            <img src="copertina iniziale.jpg" alt="Background Ombra" class="w-full h-full object-cover opacity-20 object-center">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#070707]/60 to-[#070707]"></div>
+        </div>
+        
+        <div class="z-10 reveal active">
+            <h1 class="text-5xl md:text-7xl lg:text-[7rem] tracking-[0.1em] uppercase font-light leading-none">
+                Dell'ombra <br>
+                <span class="text-4xl md:text-6xl lg:text-8xl lowercase italic font-serif-custom tracking-normal text-gray-400 block mt-2 md:mt-4">e del velo</span>
+            </h1>
+            
+            <div class="mt-16 h-px w-24 bg-gray-500 mx-auto opacity-50"></div>
+            
+            <p class="mt-10 text-xs md:text-sm tracking-[0.3em] uppercase text-gray-300 font-light drop-shadow-lg">
+                Il corpo come rito, il tessuto come trascendenza
+            </p>
+            
+            <p class="mt-6 text-[10px] md:text-xs tracking-[0.2em] text-gray-500">
+                Spring/Summer 2027
+            </p>
+        </div>
+
+        <a href="#concept" class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-gray-500 hover:text-white transition-colors z-10">
+            <i data-lucide="chevron-down" class="w-6 h-6 animate-pulse"></i>
+        </a>
+    </header>
+
+    <!-- Concept Section -->
+    <section id="concept" class="py-24 md:py-40 px-6 md:px-16 lg:px-32 max-w-none w-full section-light">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center">
+            <div class="w-full md:w-5/12 reveal">
+                <p class="text-xs tracking-[0.3em] uppercase text-gray-500 mb-6 font-light">01 / Concept</p>
+                <h2 class="text-3xl md:text-5xl tracking-widest uppercase mb-10 leading-tight">Il Confine<br>Tra Visibile e Celato</h2>
+                <div class="space-y-8 text-gray-800 text-sm md:text-base font-light leading-relaxed">
+                    <p>
+                        La collezione "Dell'Ombra e del Velo" è una linea ispirata al tema religioso, che reinterpreta le sacre vesti attraverso una visione contemporanea e misteriosa.
+                    </p>
+                    <p>
+                        Il velo diventa il simbolo del confine tra ciò che si mostra e ciò che si cela, trasformandosi in drappeggi, sovrapposizioni e volumi che avvolgono il corpo, nascondendolo e al tempo stesso rivelandolo.
+                    </p>
+                    <p>
+                        La collezione trasforma il gesto del vestirsi in un rituale contemporaneo, dove identità, mistero e sacralità del profano si intrecciano, dando vita a una narrazione sospesa tra ombra e rivelazione.
+                    </p>
+                    <p class="pt-8 font-serif-custom italic text-gray-500 text-lg md:text-xl border-l-2 border-gray-300 pl-6">
+                        "Gloria Patri, et Filio, et Spiritui Sancto."
+                    </p>
+                </div>
+            </div>
+            <!-- Immagine Cattedrale per atmosfera sacrale/strutturale -->
+            <div class="w-full md:w-7/12 aspect-[3/4] img-container reveal" style="transition-delay: 0.2s;">
+                <img src="cattedrale.jpg" alt="Ispirazione Cattedrale e Sacralità" class="editorial-img" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Target & Occasioni Section -->
+    <section id="target" class="py-24 md:py-40 px-6 md:px-16 lg:px-32 max-w-none w-full section-dark border-t border-[#1a1a1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 reveal">
+                <p class="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4 font-light">02 / Vision</p>
+                <h2 class="text-3xl md:text-4xl tracking-widest uppercase">Identità & Spazio</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+                <div class="reveal">
+                    <h3 class="text-lg md:text-xl font-serif-custom italic mb-8 border-b border-[#222] pb-6">Target & Posizionamento</h3>
+                    <ul class="space-y-8 text-gray-400 font-light text-sm md:text-base leading-relaxed">
+                        <li><strong class="text-gray-100 font-normal uppercase text-xs tracking-widest block mb-2">Profilo</strong> Donna 25-45 anni. Culturalmente curiosa, interessata a design, arte contemporanea e Teologia.</li>
+                        <li><strong class="text-gray-100 font-normal uppercase text-xs tracking-widest block mb-2">Mercato</strong> Posizionamento sul Luxury contemporary / experimental womenswear.</li>
+                        <li><strong class="text-gray-100 font-normal uppercase text-xs tracking-widest block mb-2">Valori Fondanti</strong> Spiritualità, introspezione, profanità, ritualità, identità.</li>
+                    </ul>
+                </div>
+
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-lg md:text-xl font-serif-custom italic mb-8 border-b border-[#222] pb-6">Occasioni d'uso</h3>
+                    <ul class="space-y-6 text-gray-400 font-light text-sm md:text-base">
+                        <li class="flex items-center gap-4"><div class="w-8 h-[1px] bg-gray-600"></div> Mostre e vernissage</li>
+                        <li class="flex items-center gap-4"><div class="w-8 h-[1px] bg-gray-600"></div> Eventi culturali e artistici</li>
+                        <li class="flex items-center gap-4"><div class="w-8 h-[1px] bg-gray-600"></div> Performance e spettacoli</li>
+                        <li class="flex items-center gap-4"><div class="w-8 h-[1px] bg-gray-600"></div> Serate ed eventi speciali</li>
+                        <li class="flex items-center gap-4"><div class="w-8 h-[1px] bg-gray-600"></div> Contesti professionali creativi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lookbook Preview Section -->
+    <section id="lookbook" class="py-24 md:py-40 px-6 md:px-12 lg:px-20 max-w-none w-full section-light">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="text-center mb-20 md:mb-32 reveal">
+                <p class="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4 font-light">03 / Lookbook</p>
+                <h2 class="text-3xl md:text-5xl tracking-widest uppercase mb-6">Sacre Vesti<br>Contemporanee</h2>
+            </div>
+
+            <!-- Griglia Lookbook con le immagini caricate -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+                <div class="aspect-[3/4] img-container reveal" style="transition-delay: 0.1s;">
+                    <img src="velo trasparente.png" alt="Dettaglio Velo Trasparente" class="editorial-img" loading="lazy">
+                </div>
+                <div class="aspect-[3/4] img-container reveal md:mt-24" style="transition-delay: 0.3s;">
+                    <img src="donna targhet.jpg" alt="Donna Target - Styling" class="editorial-img" loading="lazy">
+                </div>
+                <div class="aspect-[3/4] img-container reveal" style="transition-delay: 0.5s;">
+                    <img src="copertina fine colori.jpeg" alt="Lookbook Silhouette" class="editorial-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunicazione Section -->
+    <section id="comunicazione" class="py-24 md:py-40 px-6 md:px-16 lg:px-32 max-w-none w-full section-dark relative overflow-hidden">
+        <!-- Sfondo per la chiusura -->
+        <div class="absolute inset-0 z-0">
+            <img src="copertina finale.png" alt="Sfondo Chiusura" class="w-full h-full object-cover opacity-10 object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#070707] to-transparent"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center reveal relative z-10">
+            <p class="text-xs tracking-[0.3em] uppercase text-gray-500 mb-8 font-light">04 / Comunicazione</p>
+            <h2 class="text-3xl md:text-4xl tracking-widest uppercase mb-12">La Narrazione Visiva</h2>
+            <div class="space-y-8 text-gray-400 font-light text-sm md:text-base leading-relaxed mb-16">
+                <p>
+                    Il racconto si articola attraverso Instagram e il sito web del brand, che fungono da strumenti integrati per la narrazione e la presentazione del progetto.
+                </p>
+                <p>
+                    Instagram è dedicato alla diffusione dell'immaginario visivo della collezione, presentando editoriali, dettagli dei capi e contenuti di backstage (Teasing & Coinvolgimento). 
+                </p>
+                <p>
+                    Il sito web raccoglie il concept e il lookbook, offrendo una lettura strutturata dell'identità del brand e del processo progettuale.
+                </p>
+            </div>
+            
+            <div class="flex justify-center gap-8 border-t border-gray-800 pt-12">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300 flex flex-col items-center gap-3 group">
+                    <i data-lucide="instagram" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] tracking-widest uppercase">Instagram</span>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300 flex flex-col items-center gap-3 group">
+                    <i data-lucide="globe" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] tracking-widest uppercase">Sito Web</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 md:py-24 text-center section-dark border-t border-[#111] relative z-10">
+        <div class="flex flex-col items-center justify-center gap-8">
+            <h2 class="font-serif-custom text-xl md:text-2xl tracking-[0.2em] uppercase text-gray-300">Dante Odierna</h2>
+            <div class="w-12 h-px bg-gray-700"></div>
+            <div class="text-[10px] md:text-xs text-gray-500 tracking-[0.25em] uppercase leading-loose">
+                <p>Progettazione Collezione SS 2027</p>
+                <p>Esame di Progettazione</p>
+                <p class="mt-6 text-gray-700">&copy; 2027 Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section, header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-4', 'backdrop-blur-md', 'bg-black/20');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-4', 'backdrop-blur-md', 'bg-black/20');
+            }
+
+            let currentSection = null;
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 50 && rect.bottom >= 50) {
+                    currentSection = section;
+                }
+            });
+
+            if (currentSection) {
+                if (currentSection.classList.contains('section-light')) {
+                    navbar.style.color = '#121212';
+                } else {
+                    navbar.style.color = '#f5f5f3';
+                }
+            }
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+        
+        setTimeout(() => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        }, 100);
+    </script>
+</body>
+</html>
